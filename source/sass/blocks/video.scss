@@ -1,0 +1,83 @@
+.video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 67%;
+  background-color: #000000;
+
+  &--enabled {
+    cursor: pointer;
+  }
+
+  &--enabled &__button {
+    display: flex;
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-55%, -50%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 68px;
+    height: 48px;
+    font-size: 32px;
+    line-height: 1;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include vp-sm {
+      transform: translate(-62%, -50%);
+      font-size: 72px;
+    }
+
+    @include vp-lg {
+      transform: translate(-58%, -50%);
+      font-size: 50px;
+    }
+
+    @include vp-xl {
+      transform: translate(-62%,-50%);
+      font-size: 70px;
+    }
+  }
+
+  &__button-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    color: rgba(#212121, 0.8);
+  }
+
+  &:hover &__button-icon,
+  &__button:focus {
+    color: rgba(#212121, 1);
+  }
+}

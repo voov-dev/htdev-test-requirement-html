@@ -1,0 +1,172 @@
+.about-us {
+  &__wrapper {
+    position: relative;
+
+    @include vp-lg {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+  }
+
+  &__wrapper::after {
+    content: "";
+    order: 100;
+    max-width: 100%;
+    width: 100%;
+    height: 20px;
+    background-color: $color-linen;
+
+    @include vp-xl {
+      display: none;
+    }
+  }
+
+  &__video {
+    position: relative;
+    padding: 20px 15px 50px;
+
+    @include vp-sm {
+      padding: 40px 20px 60px 50px;
+    }
+
+    @include vp-lg {
+      order: 1;
+      max-width: 445px;
+      width: 100%;
+      margin-top: 100px;
+      padding: 25px 0 35px 40px;
+    }
+
+    @include vp-xl {
+      max-width: 605px;
+      margin-top: 85px;
+      padding-top: 35px;
+      padding-left: 60px;
+    }
+  }
+
+  &__video::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    max-width: 87%;
+    width: 100%;
+    padding-bottom: 63.6%;
+    background-color: $color-linen;
+
+    @include vp-sm {
+      left: 20px;
+      max-width: 520px;
+      padding-bottom: 62.6%;
+    }
+
+    @include vp-lg {
+      left: 0;
+      max-width: 405px;
+      padding-bottom: 61%;
+    }
+
+    @include vp-xl {
+      left: 25px;
+      max-width: 545px;
+      padding-bottom: 60.5%;
+    }
+  }
+
+  &__content {
+    padding: 30px 15px 30px ;
+    font-size: 14px;
+    line-height: 1.43;
+
+    @include vp-sm {
+      padding: 38px 20px 30px;
+    }
+
+    @include vp-lg {
+      order: 2;
+      max-width: calc(100% - 445px);
+      width: 100%;
+      padding: 50px 25px 55px;
+      font-size: 18px;
+      line-height: 1.66;
+    }
+
+    @include vp-xl {
+      max-width: calc(100% - 605px);
+      padding: 70px 60px 95px 40px;
+    }
+  }
+
+  &__content > p {
+    margin: 0 0 10px;
+
+    @include vp-lg {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content > p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &__content .br {
+    display: none;
+
+    @include vp-sm {
+      display: inherit;
+    }
+
+    @include vp-lg {
+      display: none;
+    }
+  }
+
+  &__headline {
+    margin: 0 0 25px;
+    font-weight: 900;
+    font-size: 8px;
+    line-height: 1.25;
+    font-family: $ff-lato;
+    color: $color-dark-powder-blue;
+    text-transform: uppercase;
+    letter-spacing: -0.02rem;
+
+    @include vp-sm {
+      margin-bottom: 20px;
+    }
+
+    @include vp-lg {
+      margin-bottom: 35px;
+      font-size: 18px;
+      letter-spacing: -0.1rem;
+    }
+  }
+
+  &__headline--count {
+    position: relative;
+    left: -3px;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: 900;
+    font-size: 42px;
+    line-height: 1;
+    font-family: $ff-lato;
+    color: $color-shadow;
+
+    @include vp-sm {
+      left: -2px;
+      margin-bottom: 5px;
+    }
+
+    @include vp-lg {
+      left: -3px;
+      margin-bottom: 15px;
+      font-size: 90px;
+    }
+  }
+}

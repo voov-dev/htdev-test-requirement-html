@@ -1,2 +1,9 @@
-mixin img(path, image, format, width, height, altText)
-  img(src="img/" + path + "/" + image + "." + format, srcset= "img/" + path + "/" + image + "@2x." + format + " 2x", width= width, height= height, alt= altText)
+mixin img(path, image, format, width, height, altText, isLg)
+  picture
+    source(media='(min-width: 1340px)', type='image/webp', srcset="img/" + path + "/" + image + "-xl.webp" + " 1x, " + "img/" + path + "/" + image + "-xl@2x.webp" + " 2x")
+    source(media='(min-width: 1340px)' srcset="img/" + path + "/" + image + "-xl." + format + " 1x, " + "img/" + path + "/" + image + "-xl@2x." + format + " 2x")
+    if (isLg)
+      source(media='(min-width: 1020px)', type='image/webp', srcset="img/" + path + "/" + image + "-lg.webp" + " 1x, " + "img/" + path + "/" + image + "-lg@2x.webp" + " 2x")
+      source(media='(min-width: 1020px)' srcset="img/" + path + "/" + image + "-lg." + format + " 1x, " + "img/" + path + "/" + image + "-lg@2x." + format + " 2x")
+    source(type='image/webp', srcset="img/" + path + "/" + image + "-sm.webp" + " 1x, " + "img/" + path + "/" + image + "-sm@2x.webp" + " 2x")
+    img(src="img/" + path + "/" + image + "-sm." + format, srcset= "img/" + path + "/" + image + "-sm@2x." + format + " 2x", width= width, height= height, alt= altText)&attributes(attributes)

@@ -1,0 +1,8 @@
+mixin banner()
+  section.banner
+    .banner__wrapper
+      +img("content", "banner-2", "jpg", 1250, 437, "Conecom - российское подразделение французской группы DuffBeer", true).banner__img
+      .banner__content
+        h2.banner__headline Миссия duffbeer
+        p.banner__subtitle работать вместе, что бы лучше накормить и&nbsp;сохранить планету
+        +btn({text: "Перейти на сайт", href: "https://htdev.ru/", isExternal: true})(aria-label="Перейти ссылке на сайт компании").banner__btn

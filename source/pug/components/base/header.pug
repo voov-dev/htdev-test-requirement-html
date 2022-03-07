@@ -16,21 +16,16 @@ mixin header(headerMods, currentUrl)
     ]
 
   header.header(class=headerMods)
-    .container
+    .header__wrapper
       if(currentUrl === "index.html")
         //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
+        span.header__logo
+          img(src="img/svg/logo.svg", alt="Логотип Conecom").header__logo-img
       else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active=link.text
-                else
-                  a.main-nav__link(href=link.href)=link.text
+        a.header__logo(href="index.html", aria-label="Переход на главную")
+          img(src="img/svg/logo.svg", alt="Логотип Conecom").header__logo-img
+      .header__content
+        h1.header__headline.header__headline--box
+          span.header__headline Conecom
+          span.header__subtitle российское подразделение французской группы DuffBeer
+      +img("content", "banner-1", "jpg", 1250, 599, "Conecom - российское подразделение французской группы DuffBeer", true).header__img

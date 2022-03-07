@@ -1,7 +1,10 @@
 import {iosVhFix} from './utils/ios-vh-fix';
+import {video} from './utils/video';
 import {initModals} from './modules/modals/init-modals';
 import {initCustomSelect} from './modules/form/init-custom-select';
 import {initFormValidate} from './modules/form/init-form-validate';
+import {iniSwiperSection} from './modules/init-swiper-section';
+import {iniAdvantage} from './modules/init-advantage';
 
 // ---------------------------------
 
@@ -11,6 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   iosVhFix();
+  video();
 
   // Modules
   // ---------------------------------
@@ -21,6 +25,9 @@ window.addEventListener('DOMContentLoaded', () => {
     initModals();
     initCustomSelect();
     initFormValidate();
+    iniSwiperSection('.section.section--advantages');
+    iniSwiperSection('.section.section--stats');
+    iniAdvantage();
   });
 });
 

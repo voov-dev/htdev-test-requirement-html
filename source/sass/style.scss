@@ -3,7 +3,6 @@
 
 @import "vendor/normalize";
 // Swiper 7.4.1
-// @import "vendor/swiper";
 
 // Global
 // ---------------------------------
@@ -16,17 +15,26 @@
 @import "global/utils";
 @import "global/container";
 
+@import "vendor/swiper";
+
 // Blocks
 // ---------------------------------
 
 @import "blocks/header";
 @import "blocks/main-nav";
 @import "blocks/footer";
-@import "blocks/modal";
+//@import "blocks/modal";
 @import "blocks/btn";
 @import "blocks/custom-input";
 @import "blocks/custom-toggle";
 @import "blocks/custom-select";
+@import "blocks/video";
+@import "blocks/about-us";
+@import "blocks/blockquote";
+@import "blocks/banner";
+@import "blocks/advantage";
+@import "blocks/section";
+@import "blocks/stats";
 
 // ---------------------------------
 
